@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ViewControllerB.h
 //  LFY_TransitionExample
 //
 //  Created by IOS.Mac on 17/1/20.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewControllerB : UIViewController
 
 @end
-
