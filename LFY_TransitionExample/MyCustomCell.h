@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DSLThing.h"
 
 FOUNDATION_EXPORT NSString *const kMyCustomCellID;
 
@@ -14,6 +15,6 @@ FOUNDATION_EXPORT NSString *const kMyCustomCellID;
 @property(nonatomic,strong)UIImageView *imageView;
 @property(nonatomic,strong)UILabel *titleLabel;
 
-- (void)configureCellWithPostURL:(NSString *)posterURL;
+- (void)configureCellWithDSLThing:(DSLThing *)thing;
 
 @end

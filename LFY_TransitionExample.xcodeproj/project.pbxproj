@@ -21,6 +21,7 @@
 		838D74AA1E31B5DB0017A74F /* thing04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 838D74A51E31B5DB0017A74F /* thing04.jpg */; };
 		838D74AB1E31B5DB0017A74F /* thing05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 838D74A61E31B5DB0017A74F /* thing05.jpg */; };
 		838D74AE1E31C2AB0017A74F /* MyCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 838D74AD1E31C2AB0017A74F /* MyCustomCell.m */; };
+		838D74B61E31DEEF0017A74F /* DSLThing.m in Sources */ = {isa = PBXBuildFile; fileRef = 838D74B51E31DEEF0017A74F /* DSLThing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		838D74AD1E31C2AB0017A74F /* MyCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomCell.m; sourceTree = "<group>"; };
 		838D74AF1E31D8FD0017A74F /* LFYMacors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFYMacors.h; sourceTree = "<group>"; };
 		838D74B01E31D9650017A74F /* LFY_TransitionExample.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFY_TransitionExample.pch; sourceTree = "<group>"; };
+		838D74B41E31DEEF0017A74F /* DSLThing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLThing.h; sourceTree = "<group>"; };
+		838D74B51E31DEEF0017A74F /* DSLThing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLThing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				838D749F1E31B4650017A74F /* ViewControllerB.m */,
 				838D74AC1E31C2AB0017A74F /* MyCustomCell.h */,
 				838D74AD1E31C2AB0017A74F /* MyCustomCell.m */,
+				838D74B41E31DEEF0017A74F /* DSLThing.h */,
+				838D74B51E31DEEF0017A74F /* DSLThing.m */,
 				83821EC11E31AE9F00AB798B /* Assets.xcassets */,
 				83821EC31E31AE9F00AB798B /* LaunchScreen.storyboard */,
 				83821EC61E31AE9F00AB798B /* Info.plist */,
@@ -317,6 +322,7 @@
 			files = (
 				83821EBD1E31AE9E00AB798B /* ViewControllerA.m in Sources */,
 				838D74A01E31B4650017A74F /* ViewControllerB.m in Sources */,
+				838D74B61E31DEEF0017A74F /* DSLThing.m in Sources */,
 				83821EBA1E31AE9E00AB798B /* AppDelegate.m in Sources */,
 				838D74AE1E31C2AB0017A74F /* MyCustomCell.m in Sources */,
 				83821EB71E31AE9E00AB798B /* main.m in Sources */,

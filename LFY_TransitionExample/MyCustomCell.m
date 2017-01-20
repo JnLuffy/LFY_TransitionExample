@@ -54,9 +54,10 @@ NSString *const kMyCustomCellID = @"kMyCustomCellID";
 
 #pragma mark - Public Method
 
-- (void)configureCellWithPostURL:(NSString *)posterURL {
-    _imageView.image = [UIImage imageNamed:posterURL];
-    _titleLabel.text = posterURL;
+- (void)configureCellWithDSLThing:(DSLThing *)thing {
+    _imageView.image = thing.image;
+    _titleLabel.text =  thing.title;
+ 
 }
 
 @end

@@ -9,11 +9,14 @@
 
 #import "ViewControllerA.h"
 #import "MyCustomCell.h"
+#import "DSLThing.h"
 
 
 
 @interface ViewControllerA ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView *collecionView;
+@property (nonatomic, strong) NSArray *things;
+
 @end
 
 @implementation ViewControllerA
@@ -21,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createView];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self loadData];
 }
 
 
@@ -44,14 +47,16 @@
     [self.view addSubview:_collecionView];
 }
 
-
-#pragma mark - UICollectionViewDataSource
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+- (void)loadData{
+    _things = [DSLThing exampleThings];
+    self.title = @"Things";
 }
 
+
+#pragma mark - UICollectionViewDataSource
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
+    return _things.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -60,7 +65,8 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [(MyCustomCell *)cell configureCellWithPostURL:[NSString stringWithFormat:@"thing0%ld.jpg",(long)indexPath.row+1]];
+    DSLThing *thing = self.things[indexPath.row];
+    [(MyCustomCell *)cell configureCellWithDSLThing:thing];
 }
 
 @end
