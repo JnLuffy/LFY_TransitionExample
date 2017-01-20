@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyCustomCell.h"
 @interface ViewControllerA : UIViewController
+@property(nonatomic,strong)UICollectionView *collectionView;
 
+- (MyCustomCell*)collectionViewCellForThing:(DSLThing*)thing;
 
 @end
 

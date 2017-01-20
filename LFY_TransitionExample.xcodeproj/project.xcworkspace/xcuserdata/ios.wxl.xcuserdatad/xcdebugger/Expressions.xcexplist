@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[LFYTransitionFromAToB animateTransition:]:LFYTransitionFromAToB.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cellImageSnapshot.frame">
+            </PersistentString>
+            <PersistentString
+               value = "[fromViewController.collecionView indexPathsForSelectedItems]">
+            </PersistentString>
+            <PersistentString
+               value = "cell.imageView.frame ">
+            </PersistentString>
+            <PersistentString
+               value = "[[fromViewController.collecionView indexPathsForSelectedItems] firstObject]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

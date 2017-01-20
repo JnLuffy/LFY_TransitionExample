@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DSLThing.h"
 @interface ViewControllerB : UIViewController
+
+@property (nonatomic, strong)  UIImageView *imageView;
+
+@property (nonatomic, strong) DSLThing *thing;
 
 @end
