@@ -64,7 +64,7 @@
     _overviewLabel.frame = CGRectMake(_imageView.frame.origin.x, 35+ITEM_WIDTH, ITEM_WIDTH, size.height);
     
 
-    //测试Git
+    //测试Git2222
 }
 
 
