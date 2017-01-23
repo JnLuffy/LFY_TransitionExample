@@ -4,7 +4,7 @@
 //
 //  Created by IOS.Mac on 17/1/20.
 //  Copyright © 2017年 com.elepphant.pingchuan. All rights reserved.
-//
+////测试git2222
 
 #import "AppDelegate.h"
 #import "ViewControllerA.h"
@@ -12,6 +12,8 @@
 @interface AppDelegate ()
 
 @end
+
+////测试git2222
 
 @implementation AppDelegate
 
