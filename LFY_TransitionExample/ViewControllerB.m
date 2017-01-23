@@ -11,6 +11,8 @@
 #import "ViewControllerA.h"
 @interface ViewControllerB ()<UINavigationControllerDelegate>
 @property(nonatomic,strong)UILabel *overviewLabel;
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
+
 @end
 
 @implementation ViewControllerB
@@ -20,6 +22,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self createView];
+    
+    UIScreenEdgePanGestureRecognizer *popRecognizer = [[UIScreenEdgePanGestureRecognizer  alloc]initWithTarget:self action:@selector(handlerPopRecognizer:)];
+    popRecognizer.edges = UIRectEdgeLeft;
+    [self.view addGestureRecognizer:popRecognizer];
+    
 }
 
 
@@ -64,7 +71,34 @@
     _overviewLabel.frame = CGRectMake(_imageView.frame.origin.x, 35+ITEM_WIDTH, ITEM_WIDTH, size.height);
     
 
-    //测试Git2222
+    
+}
+
+#pragma mark UIGestureRecognizer handlers
+-(void)handlerPopRecognizer:(UIScreenEdgePanGestureRecognizer *)recognizer{
+    CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width * 1.0);
+    progress = MIN(1.0, MAX(0.0, progress));
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        // Create a interactive transition and pop the view controller
+        self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        // Update the interactive transition's progress
+        [self.interactivePopTransition updateInteractiveTransition:progress];
+    }
+    else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
+        // Finish or cancel the interactive transition
+        if (progress > 0.5) {
+            [self.interactivePopTransition finishInteractiveTransition];
+        }
+        else {
+            [self.interactivePopTransition cancelInteractiveTransition];
+        }
+        
+        self.interactivePopTransition = nil;
+    }
+    
 }
 
 
@@ -82,6 +116,17 @@
         return nil;
     }
 }
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                         interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
+    // Check if this is for our custom transition
+    if ([animationController isKindOfClass:[LFYTransitionFromBToA class]]) {
+        return self.interactivePopTransition;
+    }
+    else {
+        return nil;
+    }
+}
+
 
 
 @end
